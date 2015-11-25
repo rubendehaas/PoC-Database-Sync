@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlineDatabaseModelStoreContainer" CdmEntityContainer="OnlineDatabaseEntities">
+    <EntitySetMapping Name="answers">
+      <EntityTypeMapping TypeName="OnlineDatabaseModel.answer">
+        <MappingFragment StoreEntitySet="answers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="answer1" ColumnName="answer" />
+          <ScalarProperty Name="questionId" ColumnName="questionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="questions">
+      <EntityTypeMapping TypeName="OnlineDatabaseModel.question">
+        <MappingFragment StoreEntitySet="questions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="question1" ColumnName="question" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

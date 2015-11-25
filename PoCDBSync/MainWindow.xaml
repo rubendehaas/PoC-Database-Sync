@@ -1,0 +1,28 @@
+﻿<Window x:Class="PoCDBSync.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoCDBSync"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Rectangle Fill="#FFF16B6B" HorizontalAlignment="Left" Height="161" Margin="280,97,0,0" Stroke="Black" VerticalAlignment="Top" Width="204"/>
+
+        <Rectangle Fill="#FFA4D483" HorizontalAlignment="Left" Height="161" Margin="30,98,0,0" Stroke="Black" VerticalAlignment="Top" Width="204"/>
+
+        <Button x:Name="btnSyncData" Content="Sync data" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="btnSyncData_Click"/>
+        <Ellipse x:Name="SyncStatus" Fill="Red" HorizontalAlignment="Left" Height="12" Margin="485,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" RenderTransformOrigin="0.359,0.452"/>
+        <TextBox x:Name="tbClient1" HorizontalAlignment="Left" Height="23" Margin="55,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="tbClient2" HorizontalAlignment="Left" Height="23" Margin="306,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+        <Button x:Name="btnSave2" Content="Update" HorizontalAlignment="Left" Margin="306,223,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
+        <Label x:Name="lblQuestion" Content="Question online" HorizontalAlignment="Left" Margin="55,139,0,0" VerticalAlignment="Top" BorderThickness="1" FontWeight="Bold"/>
+        <Button x:Name="btnSave1" Content="Update" HorizontalAlignment="Left" Margin="55,223,0,0" VerticalAlignment="Top" Width="75" Click="btnSave1_Click"/>
+        <Label x:Name="lblQuestionOffline" Content="Question offline" HorizontalAlignment="Left" Margin="306,144,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="btnInsertOnline" Content="Insert" HorizontalAlignment="Left" Margin="135,223,0,0" VerticalAlignment="Top" Width="75" Click="btnInsertOnline_Click" RenderTransformOrigin="0.499,0.484"/>
+        <Button x:Name="btnInsertOnline1" Content="Insert" HorizontalAlignment="Left" Margin="386,223,0,0" VerticalAlignment="Top" Width="75" Click="btnInsertOnline1_Click"/>
+        <Label x:Name="label" Content="Online" HorizontalAlignment="Left" Margin="55,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.519" FontWeight="Bold"/>
+        <Label x:Name="label_Copy" Content="Offline" HorizontalAlignment="Left" Margin="306,113,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

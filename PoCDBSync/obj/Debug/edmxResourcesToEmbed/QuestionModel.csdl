@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="answer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="answer1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="questionId" Type="Int32" />
+    <NavigationProperty Name="question" Relationship="Self.FK_answers_questions" FromRole="answers" ToRole="questions" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="question1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="answers" Relationship="Self.FK_answers_questions" FromRole="questions" ToRole="answers" />
+  </EntityType>
+  <Association Name="FK_answers_questions">
+    <End Role="questions" Type="Self.question" Multiplicity="0..1" />
+    <End Role="answers" Type="Self.answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="questions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="answers">
+        <PropertyRef Name="questionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="answers" EntityType="Self.answer" />
+    <EntitySet Name="questions" EntityType="Self.question" />
+    <AssociationSet Name="FK_answers_questions" Association="Self.FK_answers_questions">
+      <End Role="questions" EntitySet="questions" />
+      <End Role="answers" EntitySet="answers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
